@@ -1,0 +1,11 @@
+[Unit]
+Description=Garage Door Opener
+After=multi-user.target
+
+[Service]
+Type=idle
+WorkingDirectory=/home/pi
+ExecStart=/usr/local/bin/plackup --listen :80 garage.psgi
+
+[Install]
+WantedBy=multi-user.target
